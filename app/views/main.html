@@ -9,13 +9,13 @@
   <div class="form group">
     <form method="POST">
       <label for="campus">Campus</label>
-      <select id="campus" default="Campus" class="form-control">
+      <select id="campus" default="Campus" class="form-control" ng-model="form.campus">
         <option>Cabot</option>
         <option>Benton</option>
         <option>Little Rock</option>
       </select>
       <label for="room">Location</label>
-      <select id="room" class="form-control">
+      <select id="room" class="form-control" ng-model="form.room">
         <option>Worship Center</option>
         <option>Warehouse</option>
         <option>Chapel</option>
@@ -27,11 +27,12 @@
         <option>The Living Room</option>
       </select>
       <label for="name">Your Name</label>
-      <input type="text" id="name" placeholder="Name" class="form-control">
+      <input type="text" id="name" placeholder="Name" class="form-control" ng-model="form.name">
       <label for="contact">Phone Number or Email</label>
-      <input type="text" id="contact" placeholder="How can we reach you?" class="form-control">
+      <input type="text" id="contact" placeholder="How can we reach you?" class="form-control" ng-model="form.contact">
       <label for="textarea">Your Question</label>
-      <textarea id="question" placeholder="Ask a clear, specific question here. For example, 'How do I get my PowerPoint slides into ProPresenter?'" class="form-control"></textarea>
+      <textarea id="question" placeholder="Ask a clear, specific question here. For example, 'How do I get my PowerPoint slides into ProPresenter?'" class="form-control" ng-model="form.question"></textarea>
     </form>
   </div>
+  <p ng-show=form.name>Thanks for asking for help, {{form.name}}!</p>
 </div>

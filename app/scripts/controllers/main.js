@@ -9,9 +9,11 @@
  */
 angular.module('uhohApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.form = {
+      campus: '',
+      room: '',
+      name: '',
+      contact: '',
+      question: ''
+    };
   });
