@@ -9,23 +9,12 @@
   <div class="form group">
     <form method="POST">
       <label for="campus">Campus</label>
-      <select id="campus" default="Campus" class="form-control" ng-model="form.campus">
-        <option>Cabot</option>
-        <option>Benton</option>
-        <option>Little Rock</option>
-      </select>
+      <select id="campus" default="Campus" class="form-control" ng-model="form.campus" ng-options="campus for campus in campuses"></select>
       <label for="room">Location</label>
-      <select id="room" class="form-control" ng-model="form.room">
-        <option>Worship Center</option>
-        <option>Warehouse</option>
-        <option>Chapel</option>
-        <option>Riptide</option>
-        <option>FSM Auditorium</option>
-        <option>FSM Garage</option>
-        <option>56 Arena</option>
-        <option>The Station</option>
-        <option>The Living Room</option>
-      </select>
+      <select id="LRroom" class="form-control" ng-model="form.room" ng-show="form.campus=='Little Rock'" ng-options="room for room in LRrooms"></select>
+      <select id="CBroom" class="form-control" ng-model="form.room" ng-show="form.campus=='Cabot'" ng-options="room for room in CBrooms"></select>
+      <select id="BNroom" class="form-control" ng-model="form.room" ng-show="form.campus=='Benton'" ng-options="room for room in BNrooms"></select>
+
       <label for="name">Your Name</label>
       <input type="text" id="name" placeholder="Name" class="form-control" ng-model="form.name">
       <label for="contact">Phone Number or Email</label>
@@ -34,5 +23,4 @@
       <textarea id="question" placeholder="Ask a clear, specific question here. For example, 'How do I get my PowerPoint slides into ProPresenter?'" class="form-control" ng-model="form.question"></textarea>
     </form>
   </div>
-  <p ng-show=form.name>Thanks for asking for help, {{form.name}}!</p>
 </div>
